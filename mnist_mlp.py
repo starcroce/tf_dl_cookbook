@@ -11,7 +11,7 @@ batch_size = 200
 eta = 0.001
 max_epoch = 10
 
-mnist = input_data.read_data_sets('MNIST_DATA/', one_hot=True)
+mnist = input_data.read_data_sets('data/mnist/', one_hot=True)
 
 
 def multilayer_perceptron(x):

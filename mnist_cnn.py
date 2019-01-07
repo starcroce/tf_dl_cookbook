@@ -4,7 +4,7 @@ import numpy as np
 
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets('MNIST_DATA/', one_hot=True)
+mnist = input_data.read_data_sets('data/mnist/', one_hot=True)
 
 
 def train_size(num):

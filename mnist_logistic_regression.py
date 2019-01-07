@@ -4,7 +4,7 @@ import matplotlib.image as mpimg
 
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets('MNIST_DATA/', one_hot=True)
+mnist = input_data.read_data_sets('data/mnist/', one_hot=True)
 
 x = tf.placeholder(tf.float32, [None, 784], name='X')
 y = tf.placeholder(tf.float32, [None, 10], name='Y')
