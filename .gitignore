@@ -105,3 +105,5 @@ venv.bak/
 
 .vscode/
 graphs/
+.DS_Store
+data/cifar-10-batches-py/
