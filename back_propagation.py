@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets('MNIST_DATA/', one_hot=True)
+mnist = input_data.read_data_sets('data/mnist/', one_hot=True)
 
 n_inputs = 784  # img size 28 * 28
 n_classes = 10
