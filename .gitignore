@@ -107,3 +107,4 @@ venv.bak/
 graphs/
 .DS_Store
 data/cifar-10-batches-py/
+data/imagenet-vgg-verydeep-19.mat
