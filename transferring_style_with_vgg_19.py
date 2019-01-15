@@ -144,7 +144,7 @@ def style_loss_func(sess, model):
 
     E = [_style_loss(sess.run(model[layer_name]), model[layer_name])
          for layer_name, _ in STYLE_LAYERS]
-    W = [w for w, _ in STYLE_LAYERS]
+    W = [w for _, w in STYLE_LAYERS]
     return sum([W[l] * E[l] for l in range(len(STYLE_LAYERS))])
 
 
