@@ -107,6 +107,7 @@ venv.bak/
 .vscode/
 graphs/
 data/cifar-10-batches-py/
-data/imagenet-vgg-verydeep-19.mat
+data/*.mat
 data/dogs_and_cats/
 output/
+data/*.pb
