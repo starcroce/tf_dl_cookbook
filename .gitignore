@@ -111,4 +111,5 @@ data/*.mat
 data/dogs_and_cats/
 output/
 data/*.pb
-data/imdb.pkl
+data/*.pkl
+data/*.h5
