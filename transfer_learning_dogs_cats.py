@@ -1,7 +1,6 @@
-from keras import applications
-from keras import optimizers
-from keras.layers import Dropout, Flatten, Dense
-from keras.models import Sequential, Model
+from keras import applications, optimizers
+from keras.layers import Dense, Dropout, Flatten
+from keras.models import Model, Sequential
 from keras.preprocessing.image import ImageDataGenerator
 
 img_width, img_height = 256, 256

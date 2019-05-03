@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import tensorflow as tf
 import tensorflow.contrib.layers as layers
-
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler

@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-DATA_FILE = 'boston_housing.csv'
+DATA_FILE = './data/boston_housing.csv'
 BATCH_SIZE = 10
 NUM_FEATURES = 14
 

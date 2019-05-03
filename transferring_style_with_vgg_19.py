@@ -1,11 +1,11 @@
 import os
 import sys
+
 import matplotlib as plt
 import numpy as np
-import scipy.io
+import scipy.io as sio
 import scipy.misc
 import tensorflow as tf
-
 from matplotlib.pyplot import imshow
 from PIL import Image
 from scipy import io as sio

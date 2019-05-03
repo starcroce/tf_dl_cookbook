@@ -1,5 +1,6 @@
 from keras.applications.vgg16 import VGG16
 from matplotlib import pyplot as plt
+
 from vis.utils import utils
 from vis.visualization import visualize_activation
 

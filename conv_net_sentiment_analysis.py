@@ -1,12 +1,11 @@
 import tensorflow as tf
 import tflearn
-from tflearn.layers.core import input_data, dropout, fully_connected
-from tflearn.layers.conv import conv_1d, global_max_pool
-from tflearn.layers.merge_ops import merge
-from tflearn.layers.estimator import regression
-from tflearn.data_utils import to_categorical, pad_sequences
+from tflearn.data_utils import pad_sequences, to_categorical
 from tflearn.datasets import imdb
-
+from tflearn.layers.conv import conv_1d, global_max_pool
+from tflearn.layers.core import dropout, fully_connected, input_data
+from tflearn.layers.estimator import regression
+from tflearn.layers.merge_ops import merge
 
 train, test, _ = imdb.load_data(
     path='./data/imdb.pkl', n_words=10000, valid_portion=0.1)

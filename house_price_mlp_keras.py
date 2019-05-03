@@ -1,11 +1,10 @@
 import keras
 import matplotlib.pyplot as plt
 import pandas as pd
-
 from keras.layers import Dense
 from keras.models import Sequential
 from sklearn import datasets
-from sklearn.metrics import r2_score, mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 

@@ -1,5 +1,5 @@
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
 
 eta = 0.4  # learning rate
 epsilon = 1e-3

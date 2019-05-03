@@ -1,6 +1,5 @@
 import tensorflow as tf
 import tensorflow.contrib.layers as layers
-
 from tensorflow.examples.tutorials.mnist import input_data
 
 n_hidden = 30

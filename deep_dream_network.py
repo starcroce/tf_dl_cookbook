@@ -1,10 +1,10 @@
-import PIL.Image
+import base64
+from functools import partial
+
 import matplotlib.pyplot as plt
 import numpy as np
+import PIL.Image
 import tensorflow as tf
-import base64
-
-from functools import partial
 
 content_image = 'data/gulli.jpg'
 img_noise = np.random.uniform(size=(244, 244, 3)) + 100

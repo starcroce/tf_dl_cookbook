@@ -1,6 +1,7 @@
 import os
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
 from magenta.models.nsynth import utils
 from magenta.models.nsynth.wavenet import fastgen
 
