@@ -116,3 +116,4 @@ data/*.h5
 data/wavenet-ckpt
 data/*.wav
 data/*.npy
+data/*.hdf5
