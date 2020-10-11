@@ -1,7 +1,8 @@
 import tensorflow as tf
+
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets('data/mnist/', one_hot=True)
+mnist = input_data.read_data_sets("data/mnist/", one_hot=True)
 
 n_inputs = 784  # img size 28 * 28
 n_classes = 10
@@ -22,19 +23,19 @@ y = tf.placeholder(tf.float32, [None, n_classes])
 
 
 def multilayer_perceptron(x, weights, biases):
-    h_layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['h1'])
+    h_layer_1 = tf.add(tf.matmul(x, weights["h1"]), biases["h1"])
     out_layer_1 = tf.sigmoid(h_layer_1)
-    h_out = tf.matmul(out_layer_1, weights['out']) + biases['out']
+    h_out = tf.matmul(out_layer_1, weights["out"]) + biases["out"]
     return tf.sigmoid(h_out), h_out, out_layer_1, h_layer_1
 
 
 weights = {
-    'h1': tf.Variable(tf.random_normal([n_inputs, n_hidden], seed=seed)),
-    'out': tf.Variable(tf.random_normal([n_hidden, n_classes], seed=seed)),
+    "h1": tf.Variable(tf.random_normal([n_inputs, n_hidden], seed=seed)),
+    "out": tf.Variable(tf.random_normal([n_hidden, n_classes], seed=seed)),
 }
 biases = {
-    'h1': tf.Variable(tf.random_normal([1, n_hidden], seed=seed)),
-    'out': tf.Variable(tf.random_normal([1, n_classes], seed=seed)),
+    "h1": tf.Variable(tf.random_normal([1, n_hidden], seed=seed)),
+    "out": tf.Variable(tf.random_normal([1, n_classes], seed=seed)),
 }
 
 # forward pass
@@ -45,7 +46,7 @@ err = y_hat - y
 delta_2 = tf.multiply(err, sig_prime(h_2))
 delta_w_2 = tf.matmul(tf.transpose(o_1), delta_2)
 
-wtd_error = tf.matmul(delta_2, tf.transpose(weights['out']))
+wtd_error = tf.matmul(delta_2, tf.transpose(weights["out"]))
 delta_1 = tf.multiply(wtd_error, sig_prime(h_1))
 delta_w_1 = tf.matmul(tf.transpose(x_in), delta_1)
 
@@ -53,26 +54,18 @@ eta = tf.constant(learning_rate)
 
 # update weights
 step = [
+    tf.assign(weights["h1"], tf.subtract(weights["h1"], tf.multiply(eta, delta_w_1)),),
     tf.assign(
-        weights['h1'],
-        tf.subtract(weights['h1'], tf.multiply(eta, delta_w_1)),
+        biases["h1"],
+        tf.subtract(biases["h1"], tf.multiply(eta, tf.reduce_mean(delta_1, axis=[0])),),
     ),
     tf.assign(
-        biases['h1'],
+        weights["out"], tf.subtract(weights["out"], tf.multiply(eta, delta_w_2)),
+    ),
+    tf.assign(
+        biases["out"],
         tf.subtract(
-            biases['h1'],
-            tf.multiply(eta, tf.reduce_mean(delta_1, axis=[0])),
-        ),
-    ),
-    tf.assign(
-        weights['out'],
-        tf.subtract(weights['out'], tf.multiply(eta, delta_w_2)),
-    ),
-    tf.assign(
-        biases['out'],
-        tf.subtract(
-            biases['out'],
-            tf.multiply(eta, tf.reduce_mean(delta_2, axis=[0])),
+            biases["out"], tf.multiply(eta, tf.reduce_mean(delta_2, axis=[0])),
         ),
     ),
 ]
@@ -90,13 +83,11 @@ with tf.Session() as sess:
 
         if epoch % 100 == 0:
             acc_test = sess.run(
-                accuracy,
-                feed_dict={x_in: mnist.test.images, y: mnist.test.labels}
+                accuracy, feed_dict={x_in: mnist.test.images, y: mnist.test.labels}
             )
             acc_train = sess.run(
-                accuracy,
-                feed_dict={x_in: mnist.train.images, y: mnist.train.labels}
+                accuracy, feed_dict={x_in: mnist.train.images, y: mnist.train.labels}
             )
             print(
-                f'Epoch {epoch}: accuracy train {acc_train}, accuracy test {acc_test}'
+                f"Epoch {epoch}: accuracy train {acc_train}, accuracy test {acc_test}"
             )

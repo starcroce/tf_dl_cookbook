@@ -17,9 +17,9 @@ with tf.Session() as sess:
     sess.run(init)
     y = sess.run(out)
 
-    plt.xlabel('Activity of Neuron')
-    plt.ylabel('Output of Neuron')
-    plt.title('Threshold Activation Function')
+    plt.xlabel("Activity of Neuron")
+    plt.ylabel("Output of Neuron")
+    plt.title("Threshold Activation Function")
     plt.plot(h, y)
     plt.show()
 
@@ -32,9 +32,9 @@ with tf.Session() as sess:
     sess.run(init)
     y = sess.run(out)
 
-    plt.xlabel('Activity of Neuron')
-    plt.ylabel('Output of Neuron')
-    plt.title('Sigmoid Activation Function')
+    plt.xlabel("Activity of Neuron")
+    plt.ylabel("Output of Neuron")
+    plt.title("Sigmoid Activation Function")
     plt.plot(h, y)
     plt.show()
 
@@ -47,9 +47,9 @@ with tf.Session() as sess:
     sess.run(init)
     y = sess.run(out)
 
-    plt.xlabel('Activity of Neuron')
-    plt.ylabel('Output of Neuron')
-    plt.title('Sigmoid Activation Function')
+    plt.xlabel("Activity of Neuron")
+    plt.ylabel("Output of Neuron")
+    plt.title("Sigmoid Activation Function")
     plt.plot(h, y)
     plt.show()
 
@@ -74,9 +74,9 @@ with tf.Session() as sess:
     sess.run(init)
     y = sess.run(out)
 
-    plt.xlabel('Activity of Neuron')
-    plt.ylabel('Output of Neuron')
-    plt.title('Relu Activation Function')
+    plt.xlabel("Activity of Neuron")
+    plt.ylabel("Output of Neuron")
+    plt.title("Relu Activation Function")
     plt.plot(h, y)
     plt.show()
 
@@ -89,8 +89,8 @@ with tf.Session() as sess:
     sess.run(init)
     y = sess.run(out)
 
-    plt.xlabel('Activity of Neuron')
-    plt.ylabel('Output of Neuron')
-    plt.title('Softmax Activation Function')
+    plt.xlabel("Activity of Neuron")
+    plt.ylabel("Output of Neuron")
+    plt.title("Softmax Activation Function")
     plt.plot(h, y)
     plt.show()

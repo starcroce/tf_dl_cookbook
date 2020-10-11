@@ -25,7 +25,14 @@ X_in = [
     [F, F, F, T],
 ]
 Y = [
-    [T], [T], [F], [F], [T], [F], [F], [F],
+    [T],
+    [T],
+    [F],
+    [F],
+    [T],
+    [F],
+    [F],
+    [F],
 ]
 
 W = tf.Variable(tf.random_normal([4, 1], stddev=2, seed=0))
@@ -46,6 +53,6 @@ with tf.Session() as sess:
     while err > epsilon and epoch < max_epochs:
         epoch += 1
         err, _ = sess.run([mean_error, train])
-        print(f'epoch {epoch} mean error: {err}')
+        print(f"epoch {epoch} mean error: {err}")
 
-    print('Training complete')
+    print("Training complete")

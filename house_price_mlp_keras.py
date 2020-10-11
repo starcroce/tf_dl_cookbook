@@ -1,6 +1,7 @@
 import keras
 import matplotlib.pyplot as plt
 import pandas as pd
+
 from keras.layers import Dense
 from keras.models import Sequential
 from sklearn import datasets
@@ -10,10 +11,11 @@ from sklearn.preprocessing import MinMaxScaler
 
 boston = datasets.load_boston()
 df = pd.DataFrame(boston.data, columns=boston.feature_names)
-df['target'] = boston.target
+df["target"] = boston.target
 
 X_train, X_test, y_train, y_test = train_test_split(
-    df[['RM', 'LSTAT', 'PTRATIO']], df[['target']], test_size=0.3, random_state=0)
+    df[["RM", "LSTAT", "PTRATIO"]], df[["target"]], test_size=0.3, random_state=0
+)
 X_train = MinMaxScaler().fit_transform(X_train)
 X_test = MinMaxScaler().fit_transform(X_test)
 y_train = MinMaxScaler().fit_transform(y_train)
@@ -28,13 +30,14 @@ max_epoch = 1000
 
 # build model
 model = Sequential()
-model.add(Dense(n_hidden, input_dim=n, activation='relu'))
-model.add(Dense(1, activation='sigmoid'))
+model.add(Dense(n_hidden, input_dim=n, activation="relu"))
+model.add(Dense(1, activation="sigmoid"))
 print(model.summary())
 
-model.compile(loss='mean_squared_error', optimizer='adam')
+model.compile(loss="mean_squared_error", optimizer="adam")
 model.fit(
-    X_train, y_train,
+    X_train,
+    y_train,
     validation_data=(X_test, y_test),
     epochs=max_epoch,
     batch_size=batch_size,
@@ -45,4 +48,4 @@ y_test_pred = model.predict(X_test)
 y_train_pred = model.predict(X_train)
 r2 = r2_score(y_test, y_test_pred)
 rmse = mean_squared_error(y_test, y_test_pred)
-print(f'Performance Metrics: R2 {r2}, RMSE {rmse}')
+print(f"Performance Metrics: R2 {r2}, RMSE {rmse}")

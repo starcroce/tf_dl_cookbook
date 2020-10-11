@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-DATA_FILE = './data/boston_housing.csv'
+DATA_FILE = "./data/boston_housing.csv"
 BATCH_SIZE = 10
 NUM_FEATURES = 14
 
@@ -22,7 +22,7 @@ def data_generater(filename):
         [features, label],
         batch_size=BATCH_SIZE,
         capacity=capacity,
-        min_after_dequeue=min_after_deque
+        min_after_dequeue=min_after_deque,
     )
 
     return feature_batch, label_batch
@@ -35,7 +35,7 @@ def generate_data(feature_batch, label_batch):
 
         for _ in range(5):
             features, _ = sess.run([feature_batch, label_batch])
-            print(features, 'HI')
+            print(features, "HI")
 
         coord.request_stop()
         coord.join(threads)

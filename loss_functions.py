@@ -4,11 +4,11 @@ m = 1000
 n = 15
 P = 2
 
-X = tf.placeholder(tf.float32, name='X', shape=[m, n])
-Y = tf.placeholder(tf.float32, name='Y', shape=[m, P])
+X = tf.placeholder(tf.float32, name="X", shape=[m, n])
+Y = tf.placeholder(tf.float32, name="Y", shape=[m, P])
 
-w0 = tf.Variable(tf.zeros([1, P]), name='bias')
-w1 = tf.Variable(tf.random_normal([n, 1]), name='weights')
+w0 = tf.Variable(tf.zeros([1, P]), name="bias")
+w1 = tf.Variable(tf.random_normal([n, 1]), name="weights")
 
 Y_hat = tf.matmul(X, w1) + w0
 
